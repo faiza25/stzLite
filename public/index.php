@@ -40,7 +40,7 @@ $capsule->bootEloquent();
 
  $routerContainer = new RouterContainer();
  $map = $routerContainer->getMap();
- $map->get('index','/ENS_TELEMATICA/',[
+ $map->get('index','/',[
    'controller' => 'App\Controllers\IndexController',
    'action' => 'indexAction'
  ]);
@@ -129,7 +129,7 @@ $map->get('addTelematica','/ENS_TELEMATICA/telematica/add',[
 
 
 //Inicio Sección
-$map->get('loginForm', '/ENS_TELEMATICA/login',[
+$map->get('loginForm', '/login',[
   'controller' => 'App\Controllers\AuthController',
   'action' => 'getLogin'
 ]);
