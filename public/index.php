@@ -70,7 +70,7 @@ $map->get('admin', '/ENS_TELEMATICA/admin',[
 
 
 //Ejercicios
-$map->get('showeje', '/ENS_TELEMATICA/ejercicios',[
+$map->get('showeje', '/ejercicios',[
   'controller' => 'App\Controllers\EjerciciosController',
   'action' => 'ENS_0135Action',
 ]);
