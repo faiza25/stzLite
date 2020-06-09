@@ -1,0 +1,46 @@
+{% extends "dashboard.twig" %}
+{% block content1 %}
+   <h1 class="h2">Usuarios</h1>
+{% endblock %}
+
+{% block content %}
+
+
+<section id="form_login">
+<div class="container mt-4 mb-4">
+    <form action="/ENS_TELEMATICA/user/add" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" id="Email" name="email" placeholder="Email"  value="{{users.email}}">
+      </div>
+    </div>
+
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="type" id="superusuario" value="superusuario">
+    <label class="form-check-label" for="superusuario">
+      Superusuario
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="type" id="usuario" value="usuario" >
+    <label class="form-check-label" for="usuario">
+      Usuario
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="type" id="cliente" value="cliente" >
+    <label class="form-check-label" for="cliente">
+      Cliente
+    </label>
+  </div>
+  <div class="form-row">
+    <button type="submit" class="btn-platzi btn">Modificar</button>
+  </div>
+
+</form>
+</div>
+</section>
+
+{% endblock %}

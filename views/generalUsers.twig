@@ -1,0 +1,76 @@
+{% extends "dashboard.twig" %}
+{% block content1 %}
+   <h1 class="h2">Usuarios</h1>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+  <div class="col">
+    <div class="card border-primary mb-3" style="max-width: 18rem;">
+      <a class="nav-link" href="/ENS_TELEMATICA/registerUser/add">
+      <div class="card-body text-primary">
+          <span data-feather="user-plus"></span>
+          Agregar Nuevos Usuarios
+      </div>
+        </a>
+    </div>
+  </div>
+  <div class="col">
+  <div class="card border-secondary mb-3" style="max-width: 18rem;">
+      <a class="nav-link" href="/ENS_TELEMATICA/registerUser/show">
+      <div class="card-body text-secondary ">
+          <span data-feather="edit"></span>
+          Mostrar & Editar Usuarios
+      </div>
+        </a>
+  </div>
+  </div>
+  <div class="col">
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+      <a class="nav-link" href=#>
+      <div class="card-body text-success">
+          <span data-feather="book-open"></span>
+          Historial Usuarios
+      </div>
+        </a>
+    </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-2">
+
+  </div>
+  <div class="col">
+  <div class="card border-danger mb-3" style="max-width: 18rem;">
+      <a class="nav-link" href="/ENS_TELEMATICA/user/add">
+      <div class="card-body text-danger ">
+          <span data-feather="file-plus"></span>
+        Agregar Permisos De Usuario
+      </div>
+        </a>
+  </div>
+  </div>
+  <div class="col">
+    <div class="card border-warning mb-3" style="max-width: 18rem;">
+      <a class="nav-link" href=/ENS_TELEMATICA/user/show>
+      <div class="card-body text-warning">
+          <span data-feather="users"></span>
+          Mostrar & Editar Permisos Usuarios
+      </div>
+        </a>
+    </div>
+
+</div>
+<div class="col-2">
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}

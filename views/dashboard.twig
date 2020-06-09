@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>STZ lite</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-5/img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="stylesheet" href="/Portafolio/css/jquery.datetimepicker.css">
+  </head>
+  <body>
+
+    <div class="page">
+      <!-- Main Navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <!-- Search Box-->
+          <div class="search-box">
+            <button class="dismiss"><i class="icon-close"></i></button>
+          </div>
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <!-- Navbar Header-->
+              <div class="navbar-header">
+                <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                  <div class="brand-text d-none d-lg-inline-block"><span>STZ</span><strong>Lite</strong></div>
+                  <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>STZ</strong></div></a>
+                <!-- Toggle Button-->
+                <a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+              </div>
+              <!-- Navbar Menu -->
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Logout    -->
+                <li class="nav-item"><a href="/ENS_TELEMATICA/logout" class="nav-link logout"> <span class="d-none d-sm-inline">Salir</span><i class="fa fa-sign-out"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="page-content d-flex align-items-stretch">
+        <!-- Side Navbar -->
+        <nav class="side-navbar">
+
+          <!-- Sidebar Navidation Menus-->
+          <ul class="list-unstyled">
+            <li class="active"><a href="/ENS_TELEMATICA/admin"> <i class="icon-home"></i>Inicio</a></li>
+            <span class="heading">Entrenamiento</span>
+            <li><a href="#TelematicaDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bar-chart"></i>Ejercicios</a>
+              <ul id="TelematicaDropdown" class="collapse list-unstyled ">
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Abdomen"> Abdomen</a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Biceps"> Biceps </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Antebraso"> Antebrazo </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Dorsales"> Dorsales</a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Espalda"> Espalda </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Full"> Full Body </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Hombros"> Hombros</a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Pecho"> Pecho </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Piernas"> Piernas </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Remo"> Remo Olimpico </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Sentadillas"> Sentadillas</a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Trapecio"> Trapecio </a></li>
+                <li><a href="/ENS_TELEMATICA/ejercicios?name=Triceps"> Triceps </a></li>
+              </ul>
+            </li>
+
+
+            <span class="heading">Usuarios</span>
+                <li><a href="/ENS_TELEMATICA/users/add"> <i class="icon-users"></i>Agregar Usuarios</a></li>
+          </ul>
+        </nav>
+        <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">{% block content1 %}{% endblock %}</h2>
+            </div>
+          </header>
+
+            <br></br>
+            <div >
+              {% block content %}{% endblock %}
+            </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="/Portafolio/js/jquery.js"></script>
+    <script src="/Portafolio/js/jquery.datetimepicker.full.min.js"></script>
+    {% block content2 %}{% endblock %}
+    <!--Agregar Icono-->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+    <!--/Agregar Iconos-->
+  </body>
+</html>
