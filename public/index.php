@@ -17,7 +17,7 @@ $capsule->addConnection([
     'host'      => 'localhost',
     'database'  => 'stz',
     'username'  => 'root',
-    'password'  => 'Fabian@2581574',
+    'password'  => '',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
@@ -46,16 +46,16 @@ $capsule->bootEloquent();
  ]);
 
  //Users
- $map->get('addUser','/ENS_TELEMATICA/users/add',[
+ $map->get('addUser','/users/add',[
    'controller' => 'App\Controllers\UsersController',
    'action' => 'getAddUserAction'
  ]);
- $map->post('saveUsers', '/ENS_TELEMATICA/user/add',[
+ $map->post('saveUsers', '/user/add',[
   'controller' => 'App\Controllers\UsersController',
   'action' => 'getAddUserAction'
 ]);
 
-$map->post('auth', '/ENS_TELEMATICA/auth',[
+$map->post('auth', '/auth',[
   'controller' => 'App\Controllers\AuthController',
   'action' => 'postLogin'
 ]);
@@ -63,7 +63,7 @@ $map->post('auth', '/ENS_TELEMATICA/auth',[
 
 //Admin
 
-$map->get('admin', '/ENS_TELEMATICA/admin',[
+$map->get('admin', '/admin',[
   'controller' => 'App\Controllers\AdminController',
   'action' => 'getIndex',
 ]);
@@ -78,51 +78,51 @@ $map->get('showeje', '/ejercicios',[
 
 //Telematica Paginas Hora
 
-$map->get('showENS_0135', '/ENS_TELEMATICA/telematica/ENS_0135',[
+$map->get('showENS_0135', '/telematica/ENS_0135',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'ENS_0135Action',
 ]);
 
-$map->get('showENS_0136', '/ENS_TELEMATICA/telematica/ENS_0136',[
+$map->get('showENS_0136', '/telematica/ENS_0136',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'ENS_0136Action',
 ]);
 
-$map->get('showENS_0137', '/ENS_TELEMATICA/telematica/ENS_0137',[
+$map->get('showENS_0137', '/telematica/ENS_0137',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'ENS_0137Action',
 ]);
 
 //Telematica Paginas Fechas
 
-$map->get('showENS_0135_Fechas', '/ENS_TELEMATICA/telematica/ENS_0135_Fechas',[
+$map->get('showENS_0135_Fechas', '/telematica/ENS_0135_Fechas',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'ENS_0135_Fechas_Action',
 ]);
 
-$map->get('showENS_0136_Fechas', '/ENS_TELEMATICA/telematica/ENS_0136_Fechas',[
+$map->get('showENS_0136_Fechas', '/telematica/ENS_0136_Fechas',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'ENS_0136_Fechas_Action',
 ]);
 
-$map->get('showENS_0137_Fechas', '/ENS_TELEMATICA/telematica/ENS_0137_Fechas',[
+$map->get('showENS_0137_Fechas', '/telematica/ENS_0137_Fechas',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'ENS_0137_Fechas_Action',
 ]);
 
 
 //Telematica Json
-$map->get('jsonTelematica','/ENS_TELEMATICA/telematica/json',[
+$map->get('jsonTelematica','/telematica/json',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'jsonTelematicaAction'
 ]);
 
-$map->get('json1Telematica','/ENS_TELEMATICA/telematica/json1',[
+$map->get('json1Telematica','/telematica/json1',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'jsonTelematicaAction1'
 ]);
 //Telematica Añadir
-$map->get('addTelematica','/ENS_TELEMATICA/telematica/add',[
+$map->get('addTelematica','/telematica/add',[
   'controller' => 'App\Controllers\TelematicaController',
   'action' => 'addTelematicaAction'
 ]);
@@ -134,7 +134,7 @@ $map->get('loginForm', '/login',[
   'action' => 'getLogin'
 ]);
 
-$map->get('logout', '/ENS_TELEMATICA/logout',[
+$map->get('logout', '/logout',[
   'controller' => 'App\Controllers\AuthController',
   'action' => 'getLogout'
 ]);

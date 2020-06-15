@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>STZ Lite</title>
+
+
+	<!--STYLESHEET-->
+	<!--=================================================-->
+
+	<!--Roboto Font [ OPTIONAL ]-->
+
+
+	<!--Bootstrap Stylesheet [ REQUIRED ]-->
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+	<!--Activeit Stylesheet [ REQUIRED ]-->
+<link rel="stylesheet" href="/css/main.css">
+
+<!--SCRIPT-->
+<!--=================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+
+<script src="https://kit.fontawesome.com/9d59c9c7c9.js" crossorigin="anonymous"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+
+	<!--jQuery [ REQUIRED ]-->
+	<script src="/js/jquery-2.1.1.min.js"></script>
+	<!--BootstrapJS [ RECOMMENDED ]-->
+	<script src="/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+	<div id="container" class="effect mainnav-lg">
+		<!--NAVBAR-->
+		<header id="navbar">
+        <div id="navbar-container" class="boxed">
+        <!--Brand logo & name-->
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">
+                <img src="https://res.cloudinary.com/creapp/image/upload/v1589952640/xhmq9vukrkb1nofgfadd.jpg" alt="Mi Local" class="brand-icon" style="padding:8px;">
+                <div class="brand-title">
+                    <span class="brand-text"><span>STZ</span><strong>Lite</strong></span>
+                </div>
+            </a>
+        </div>
+        <!--End brand logo & name-->
+
+        <!--Navbar Dropdown-->
+        <div class="navbar-content clearfix">
+            <ul class="nav navbar-top-links pull-left">
+                <!--Navigation toogle button-->
+                <li class="tgl-menu-btn">
+                    <a class="mainnav-toggle">
+                        <i class="fa fa-navicon fa-lg"></i>
+                    </a>
+                </li>
+                <!--End Navigation toogle button-->
+            </ul>
+
+            <ul class="nav navbar-top-links pull-right">
+                <li>
+                    <div class="lang-selected" style="margin-top:10px;">
+                      <a href="#" target="_blank" class="btn btn-default">
+                      <i class="fa fa-desktop"></i>  Visita la página de inicio
+                      </a>
+                    </div>
+                </li>
+
+                <li id="dropdown-user" class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                        <span class="pull-right">
+                        <img class="img-circle img-user media-object" src="https://res.cloudinary.com/creapp/image/upload/v1589952640/xhmq9vukrkb1nofgfadd.jpg" alt="Profile Picture">
+                        </span>
+                        <div class="username hidden-xs">
+					              Mario Santacruz
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
+                        <!-- User dropdown menu -->
+                        <ul class="head-list">
+                            <li>
+                              <a href="#">
+                                <i class="fa fa-user fa-fw fa-lg"></i>Perfil</a>
+                            </li>
+                        </ul>
+                        <!-- Dropdown footer -->
+                        <div class="pad-all text-right">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fa fa-sign-out fa-fw"></i>
+                                 Cerrar sesión
+                           </a>
+                        </div>
+                    </div>
+                </li>
+                <!--End user dropdown-->
+            </ul>
+        </div>
+    </div>
+    </header>
+    <!--END NAVBAR-->
+		<div class="boxed" id="fol">
+			<!--CONTENT CONTAINER-->
+		<div>
+
+      <div id="content-container">
+        <div id="page-title">
+          <h1 class="page-header text-overflow">Dashboard - STZ SQUAD BOX</h1>
+        </div>
+    <div id="page-content">
+
+      <div class="row">
+           <div class="col-12 col-lg-8 col-xl-8">
+      	    <div class="card">
+      		 <div class="card-header">
+      		 </div>
+      		 <div class="card-body" style="border: 1px solid #ebebeb;padding: 5px;">
+
+      			<div class="chart-container-1"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+      		      <canvas id="myChart" width="400" height="260" class="chartjs-render-monitor" style="display: block; width: 690px; height: 260px;"></canvas>
+      			</div>
+      		 </div>
+
+      		 <div class="row m-0 row-group text-center border-top border-light-3">
+      		   <div class="col-12 col-lg-4">
+      		     <div class="p-3">
+      		       <h5 class="mb-0"id ="temperatura">0 kg</h5>
+      			   <small class="mb-0">Fuerza <span> <i class="fa fa-arrow-up"></i> 0.00%</span></small>
+      		     </div>
+      		   </div>
+      		   <div class="col-12 col-lg-4">
+      		     <div class="p-3">
+      		       <h5 class="mb-0">0</h5>
+      			   <small class="mb-0">Repeticiones <span> <i class="fa fa-arrow-up"></i> 0.00%</span></small>
+      		     </div>
+      		   </div>
+      		   <div class="col-12 col-lg-4">
+      		     <div class="p-3">
+      		       <h5 class="mb-0">0 Cal</h5>
+      			   <small class="mb-0">Calorias <span> <i class="fa fa-arrow-up"></i> 0.00%</span></small>
+      		     </div>
+      		   </div>
+      		 </div>
+
+      		</div>
+      	 </div>
+
+           <div class="col-12 col-lg-4 col-xl-4">
+              <div class="card">
+                 <div class="card-header">
+                   <div class="card-action">
+                   <div class="dropdown">
+                   <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+                    <i class="icon-options"></i>
+                   </a>
+
+                    </div>
+                   </div>
+                 </div>
+                 <div class="card-body"  style="border: 1px solid #ebebeb;padding: 5px;">
+                    <div class="gauge" align="center">
+                      <canvas data-type="radial-gauge" data-value="0" data-width="320" data-height="255" data-bar-width="20" data-bar-shadow="1" data-color-bar-progress="#14acf4" data-color-bar="#A9CCE3" data-border-shadow-width="0" data-border-inner-width="0" data-border-outer-width="0" data-border-middle-width="0" data-highlights="false" data-value-box-stroke="0" data-color-value-box-shadow="0" data-value-box-border-radius="0"
+                      data-value-text-shadow="0" data-color-value-box-background="transparent" data-needle="false" width="200" height="200" style="width: 200px; height: 200px;"></canvas>
+                   </div>
+                  </div>
+
+               </div>
+           </div>
+      	</div>
+
+
+
+    </div>
+  <style>
+	  #actions {
+		list-style: none;
+		padding: 0;
+	  }
+	  #inline-actions {
+		padding-top: 10px;
+	  }
+	  .item {
+		margin-left: 20px;
+	  }
+  </style>
+</div>
+			<!--END CONTENT CONTAINER-->
+
+			<!--MAIN NAVIGATION-->
+			<nav id="mainnav-container">
+        <div id="mainnav">
+        <!--Menu-->
+        <div id="mainnav-menu-wrap">
+            <div class="nano">
+                <div class="nano-content" style="overflow-x:auto;">
+                    <ul id="mainnav-menu" class="list-group">
+                        <!--Category name-->
+                        <li class="list-header"></li>
+                        <!--Menu list item-->
+                        <li  class="active-link" style="border-top:1px solid rgba(69, 74, 84, 0.7);">
+                            <a href="#"> <i class="fa fa-tachometer"></i>
+                            <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <!--Menu list item-->
+							          <li>
+								            <a href="#"><i class="fa fa-list"></i>
+										        <span class="menu-title">Ejercicios</span>
+			                      <i class="fa arrow"></i>
+								            </a>
+
+								         <!--PRODUCT------------------>
+								                 <ul class="collapse">
+                                   	<li>
+											                <a href="#">
+												              <i class="fa fa-circle fs_i"></i>Abdomen
+                                    	</a>
+										                </li>
+                                    <li>
+                                    <a href="#">
+                                    <i class="fa fa-circle fs_i"></i>Biceps
+                                    </a>
+                                  </li>
+																</ul>
+							          </li>
+
+
+            </div>
+            </div>
+            </div>
+        </div>
+</nav>
+
+		</div>
+		<!-- FOOTER -->
+
+<footer id="footer">
+
+    	<p class="pad-lft">&#0169; 2020 CREAPP</p>
+</footer>		<!-- END FOOTER -->
+		<!-- SCROLL TOP BUTTON -->
+		<button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+	</div>
+	<!-- END OF CONTAINER -->
+
+	<!-- SETTINGS - DEMO PURPOSE ONLY -->
+
+	<!--Activeit Admin [ RECOMMENDED ]-->
+	<script src="http://165.227.41.189/template/back/js/activeit.min.js"></script>
+  <script src="https://cdn.rawgit.com/Mikhus/canvas-gauges/master/gauge.min.js"></script>
+  <script>
+
+  var mqtt;
+  var reconnectTimeout = 2000;
+  var host="broker.mqtt-dashboard.com"; //change this
+  var port=8000;
+
+  function onConnect() {
+  // Once a connection has been made, make a subscription and send a message.
+  console.log("Connected ");
+  mqtt.subscribe("fabianTopic");
+  //message = new Paho.MQTT.Message("Hola wen");
+  //message.destinationName = "fabianTopic";
+  //mqtt.send(message);
+
+  }
+  function MQTTconnect() {
+  console.log("connecting to "+ host +" "+ port);
+  mqtt = new Paho.MQTT.Client(host,port,"clientjs");
+  //document.write("connecting to "+ host);
+  var options = {
+    timeout: 3,
+    onSuccess: onConnect,
+
+   };
+
+  mqtt.connect(options); //connect
+  mqtt.onMessageArrived = onMessageArrived;
+
+
+  }
+
+
+
+  var i =0;
+  var integer=0;
+
+  function onMessageArrived(message) {
+    if (message.destinationName == 'fabianTopic') { //acá coloco el topic
+       integer = parseInt(message.payloadString);
+      document.gauges.forEach(function (gauge) {
+        gauge.value = message.payloadString;
+      });
+
+        document.getElementById("temperatura").textContent = message.payloadString + "Kg";
+    }
+  }
+
+
+
+  </script>
+
+
+  <script>
+  MQTTconnect();
+  </script>
+
+
+  <script>
+
+  $(document).ready(function() {
+  var ctx = document.getElementById("myChart").getContext("2d");
+  var heightRatio = 1.5;
+  ctx.height = ctx.width * heightRatio;
+
+
+
+  var data = {
+    labels: ["1", "2", "3", "4", "5", "6", "7"],
+    datasets: [{
+      label: "My First dataset",
+      fillColor: "#14acf4",
+      strokeColor: "rgba(220,220,220,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(220,220,220,1)",
+      data: [0, 0, 0, 0,0 ,0, 0]
+    }]
+  };
+  var options = {
+    animation: false,
+    //Boolean - If we want to override with a hard coded scale
+    scaleOverride: true,
+    //** Required if scaleOverride is true **
+    //Number - The number of steps in a hard coded scale
+    scaleSteps: 10,
+    //Number - The value jump in the hard coded scale
+    scaleStepWidth: 10,
+    //Number - The scale starting value
+    scaleStartValue: 0
+  };
+
+  var myLineChart = new Chart(ctx).Line(data, options);
+  var numx=7;
+  setInterval(function() {
+    setData(data.datasets[0].data);
+    setLabels(data.labels);
+
+    var myLineChart = new Chart(ctx).Line(data, options);
+  }, 1000);
+
+  function setLabels(labels) {
+    numx=numx+1;
+    labels.push(numx);
+    labels.shift();
+  }
+
+  function setData(data) {
+    data.push(integer);
+    data.shift();
+  }
+});
+
+  </script>
+
+
+
+</body>
+</html>

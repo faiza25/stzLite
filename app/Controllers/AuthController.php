@@ -18,7 +18,7 @@ class AuthController extends BaseController{
     if($user){
         if(\password_verify($postData['password'],$user->password)){
             $_SESSION['userId']= $user->id;
-            return new RedirectResponse('/ENS_TELEMATICA/admin');
+            return new RedirectResponse('/admin');
         }else{
           $responseMessage = 'Credenciales Erroneas';
         }
