@@ -12,15 +12,28 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
+// $capsule->addConnection([
+//     'driver'    => 'mysql',
+//     'host'      => 'localhost',
+//     'database'  => 'stz',
+//     'username'  => 'root',
+//     'password'  => '',
+//     'charset'   => 'utf8',
+//     'collation' => 'utf8_unicode_ci',
+//     'prefix'    => '',
+// ]);
+
+
 $capsule->addConnection([
-    'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'database'  => 'stz',
-    'username'  => 'root',
-    'password'  => '',
+    'driver'    => 'psql',
+    'host'      => 'ec2-52-44-55-63.compute-1.amazonaws.com',
+    'database'  => 'db93qttg5ej8kg',
+    'username'  => 'lsyglveqvzwfuw',
+    'password'  => '33baad8fbb8c693fca543406b62d8184096a681afb1628ed4909714e1a507849',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
+    'port'    => '5432',
 ]);
 
 // Make this Capsule instance available globally via static methods... (optional)
